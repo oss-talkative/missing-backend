@@ -20,4 +20,5 @@ from rest_framework import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include(urls)), #django 제공 login
+    path('', include("myapp.urls"))
 ]
