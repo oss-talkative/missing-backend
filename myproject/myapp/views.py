@@ -36,7 +36,7 @@ def FoundChild(request):
 @api_view(['POST', 'GET'])
 def nameFoundChild(request):
     if request.method == 'POST':
-        print("----------------", request.data)
+        # print("----------------", request.data)
         post=MChild.objects.filter(name=request.data['name']).all()
         serializer=MChileSerializer(post, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
