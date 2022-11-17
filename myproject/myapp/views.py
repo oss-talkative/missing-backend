@@ -18,10 +18,18 @@ def PostAPI(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['Get'])
-def GetAPI(request):
+def GetAllAPI(request):
         mchild = MChild.objects.all()
         serializer=MChileSerializer(mchild, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET','POST'])
+def GetNameAPI(request):
+    if request.method == 'POST':
+        print("request:",request)
+    mchild = MChild.objects.filter().all()
+    serializer=MChileSerializer(mchild, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 # @csrf_exempt

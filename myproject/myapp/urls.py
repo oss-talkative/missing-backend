@@ -1,9 +1,10 @@
 from django.urls import path, include
-from .views import HelloAPI, PostAPI, GetAPI
+from .views import HelloAPI, PostAPI, GetAllAPI, GetNameAPI
 
 urlpatterns=[
     path("hello/", HelloAPI),
     path("postApi/", PostAPI),
-    path("getApi/", GetAPI),
+    path("getAllApi/", GetAllAPI),
+    path("getNameApi/", GetNameAPI),
 
 ]
